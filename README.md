@@ -120,59 +120,6 @@ cd infrawatch
 python3 server.py
 ```
 
-Acesse em:
-
-| Serviço | URL |
-|---------|-----|
-| 📊 **Dashboard** | http://localhost:8080 |
-| 📖 **API Docs (Swagger)** | http://localhost:8080/docs |
-| 📡 **Métricas Prometheus** | http://localhost:8080/metrics |
-
-> **Credencial padrão:** `admin@infrawatch.io` / `admin123`
-
----
-
-### Opção 2 — Stack Completa com Docker Compose
-
-Requer Docker e Docker Compose instalados.
-
-```bash
-cd infrawatch
-docker compose up -d --build
-```
-
-Todos os serviços sobem automaticamente:
-
-| Serviço | URL | Descrição |
-|---------|-----|-----------|
-| 🌐 **Frontend** | http://localhost:3000 | Interface Next.js |
-| ⚙️ **API (FastAPI)** | http://localhost:8000 | Backend Python |
-| 📖 **Swagger UI** | http://localhost:8000/docs | Documentação interativa |
-| 📡 **Prometheus** | http://localhost:9090 | Coleta de métricas |
-| 📊 **Grafana** | http://localhost:3001 | Dashboards (`admin`/`admin`) |
-| 🗄️ **PostgreSQL** | localhost:5432 | Banco de dados |
-
----
-
-### Opção 3 — Desenvolvimento Local (sem Docker)
-
-**Backend:**
-```bash
-cd infrawatch/backend
-python3 -m venv venv
-source venv/bin/activate       # Linux/macOS
-# ou: venv\Scripts\activate    # Windows
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-```
-
-**Frontend:**
-```bash
-cd infrawatch/frontend
-npm install
-npm run dev
-```
-
 ---
 
 ## 📡 Endpoints da API
